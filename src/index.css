@@ -18,9 +18,29 @@
 
 /* TODO: remove other Mabry fronts that I don't need */
 
+:root {
+	--black-color: black;
+	--page-padding: 24px;
+	--page-border-width: 2px;
+}
+
 body {
 	margin: 0;
 	font-family: "Mabry", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	display: flex;
+	width: calc(100vw - 2 * var(--page-padding));
+	height: calc(100vh - 2 * var(--page-padding));
+	border: var(--page-border-width) solid var(--black-color);
+	margin: calc(var(--page-padding) - var(--page-border-width)) auto 0;
+}
+
+a {
+	all: unset;
+}
+
+#root {
+	display: flex;
+	width: 100%;
+	height: calc(100% - var(--page-padding));
+	padding: var(--page-padding);
 }

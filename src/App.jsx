@@ -1,5 +1,12 @@
+import "./index.css";
+import Header from "./components/Header";
+
 function App() {
-	return <p>nickst97.dev</p>;
+	return (
+		<>
+			<Header />
+		</>
+	);
 }
 
 export default App;
