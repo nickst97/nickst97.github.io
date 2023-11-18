@@ -27,6 +27,7 @@ export default function Header() {
 				>
 					<FontAwesomeIcon icon={faLinkedinIn} />
 				</a>
+				{/* TODO: implement dark mode */}
 				<div id="light-mode-icon">
 					<FontAwesomeIcon icon={faMoon} />
 				</div>

@@ -1,0 +1,7 @@
+footer {
+	display: flex;
+	width: 100%;
+	height: calc(67px + var(--page-padding));
+	background-color: red;
+	margin-top: auto;
+}
