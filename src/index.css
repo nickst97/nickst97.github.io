@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+	font-family: "Mabry";
+	src: url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
+	font-weight: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+	font-family: "Mabry";
+	src: url("fonts/Mabry/MabryPro-Bold.woff") format("woff");
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: "Mabry";
+	src: url("fonts/Mabry/MabryPro-Black.woff") format("woff");
+	font-weight: 900;
+}
+
+/* TODO: remove other Mabry fronts that I don't need */
+
+body {
+	margin: 0;
+	font-family: "Mabry", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
