@@ -6,6 +6,12 @@
 
 @font-face {
 	font-family: "Mabry";
+	src: url("fonts/Mabry/MabryPro-Medium.woff") format("woff");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Mabry";
 	src: url("fonts/Mabry/MabryPro-Bold.woff") format("woff");
 	font-weight: bold;
 }
@@ -15,7 +21,6 @@
 	src: url("fonts/Mabry/MabryPro-Black.woff") format("woff");
 	font-weight: 900;
 }
-
 /* TODO: remove other Mabry fronts that I don't need */
 
 :root {
@@ -34,7 +39,8 @@ body {
 	margin: calc(var(--page-padding) - var(--page-border-width)) auto 0;
 }
 
-a {
+a,
+button {
 	all: unset;
 }
 
