@@ -13,7 +13,13 @@ export default function AwardsCertifications() {
 	return (
 		<section id="section-awards-certifications">
 			{awardsCertificationsItems.map((awardsCertificationsItem) => (
-				<div className="section-item">
+				<div
+					className="section-item"
+					id={
+						"awards-cerification-container-" +
+						awardsCertificationsItem.title
+					}
+				>
 					<div className="section-item-title">
 						{awardsCertificationsItem.title}
 					</div>
