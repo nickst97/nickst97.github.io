@@ -9,6 +9,10 @@ export default function Header() {
 			{/* TODO: add Nikolas Stavrakakis */}
 			<div id="title-container">nickst97.dev</div>
 			<div id="icons-container">
+				{/* TODO: implement dark mode */}
+				<div id="light-mode-icon">
+					<FontAwesomeIcon icon={faMoon} />
+				</div>
 				<a
 					id="github-icon-container"
 					href="https://github.com/nickst97"
@@ -27,10 +31,6 @@ export default function Header() {
 				>
 					<FontAwesomeIcon icon={faLinkedinIn} />
 				</a>
-				{/* TODO: implement dark mode */}
-				<div id="light-mode-icon">
-					<FontAwesomeIcon icon={faMoon} />
-				</div>
 			</div>
 		</header>
 	);

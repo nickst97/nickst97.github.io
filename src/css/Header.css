@@ -29,6 +29,6 @@ header {
 	height: 24px;
 }
 
-#icons-container > *:last-child {
-	margin-left: 24px;
+#icons-container > *:first-child {
+	margin-right: 24px;
 }
