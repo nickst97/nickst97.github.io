@@ -9,7 +9,7 @@ export default function SectionContent({ selectedSection }) {
 		<>
 			{selectedSection === "Home" && <Home />}
 			{selectedSection === "Projects" && <Projects />}
-			{selectedSection === "AwardsCertifications" && (
+			{selectedSection === "Awards & Certifications" && (
 				<AwardsCertifications />
 			)}
 			{selectedSection === "Contact" && <Contact />}
