@@ -3,20 +3,24 @@ import "./index.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
+import SectionContent from "./components/SectionContent";
 
-const pageNames = ["Home", "Projects", "Awards & Certifications", "Contact"];
+const sectionNames = ["Home", "Projects", "Awards & Certifications", "Contact"];
 
 function App() {
-	const [selectedPage, setSelectedPage] = useState(pageNames[0]);
+	const [selectedSection, setSelectedSection] = useState(sectionNames[0]);
 
 	return (
 		<>
 			<Header />
-			<NavBar
-				pageNames={pageNames}
-				selectedPage={selectedPage}
-				setSelectedPage={setSelectedPage}
-			/>
+			<main>
+				<NavBar
+					sectionNames={sectionNames}
+					selectedSection={selectedSection}
+					setSelectedSection={setSelectedSection}
+				/>
+				<SectionContent selectedSection={selectedSection} />
+			</main>
 			<Footer />
 		</>
 	);

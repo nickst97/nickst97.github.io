@@ -1,0 +1,9 @@
+section {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: auto;
+	align-items: end;
+	justify-content: center;
+	text-align: right;
+}

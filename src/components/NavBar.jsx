@@ -1,16 +1,22 @@
 import "../css/NavBar.css";
-export default function NavBar({ pageNames, selectedPage, setSelectedPage }) {
+export default function NavBar({
+	sectionNames,
+	selectedSection,
+	setSelectedSection,
+}) {
 	return (
 		<nav>
-			{pageNames.map((pageName) => (
+			{sectionNames.map((sectionName) => (
 				<button
 					className={
 						"nav-item " +
-						(selectedPage === pageName ? "nav-item-selected" : "")
+						(selectedSection === sectionName
+							? "nav-item-selected"
+							: "")
 					}
-					onClick={() => setSelectedPage(pageName)}
+					onClick={() => setSelectedSection(sectionName)}
 				>
-					<span>{pageName}</span>
+					<span>{sectionName}</span>
 				</button>
 			))}
 		</nav>
