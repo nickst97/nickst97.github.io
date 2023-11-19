@@ -8,7 +8,7 @@ nav {
 	gap: 6px;
 }
 
-nav > button {
+.nav-item {
 	display: flex;
 	width: auto;
 	background-color: white;
@@ -17,11 +17,18 @@ nav > button {
 	height: 21px;
 	padding: 5px 10px;
 	font-weight: 600;
-	transform: skew(-15deg);
+	transform: skew(-13deg);
+	cursor: pointer;
 }
 
-nav > button > span {
+.nav-item > span {
 	width: auto;
-	transform: skew(15deg);
+	transform: skew(13deg);
 	white-space: nowrap;
+}
+
+.nav-item:hover,
+.nav-item-selected {
+	background-color: var(--black-color);
+	color: white;
 }
