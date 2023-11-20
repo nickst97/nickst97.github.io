@@ -1,12 +1,10 @@
 section {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row-reverse;
 	height: 100%;
-	width: auto;
-	align-items: end;
-	justify-content: center;
-	text-align: right;
-	gap: 10px;
+	width: calc(100% - 220px);
+	align-items: center;
+	justify-content: space-between;
 }
 
 /* .section-item {
@@ -16,4 +14,15 @@ section {
 .section-item-title {
 	font-weight: bold;
 	font-size: 24px;
+}
+
+.section-main-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: auto;
+	align-items: end;
+	justify-content: center;
+	text-align: right;
+	gap: 10px;
 }

@@ -1,0 +1,21 @@
+#projects-list > div {
+	cursor: pointer;
+}
+
+#selected-project-thumbnail {
+	display: flex;
+	border: 1px solid var(--black-color);
+	margin: 0 auto;
+	height: 300px;
+}
+
+#selected-project-thumbnail a {
+	display: flex;
+	height: 100%;
+	width: auto;
+}
+
+#selected-project-thumbnail a > img {
+	height: 100%;
+	width: 100%;
+}

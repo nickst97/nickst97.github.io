@@ -12,22 +12,24 @@ const awardsCertificationsItems = [
 export default function AwardsCertifications() {
 	return (
 		<section id="section-awards-certifications">
-			{awardsCertificationsItems.map((awardsCertificationsItem) => (
-				<div
-					className="section-item"
-					id={
-						"awards-cerification-container-" +
-						awardsCertificationsItem.title
-					}
-				>
-					<div className="section-item-title">
-						{awardsCertificationsItem.title}
+			<div className="section-main-content">
+				{awardsCertificationsItems.map((awardsCertificationsItem) => (
+					<div
+						className="section-item"
+						id={
+							"awards-cerification-container-" +
+							awardsCertificationsItem.title
+						}
+					>
+						<div className="section-item-title">
+							{awardsCertificationsItem.title}
+						</div>
+						<div className="section-item-description">
+							{awardsCertificationsItem.description}
+						</div>
 					</div>
-					<div className="section-item-description">
-						{awardsCertificationsItem.description}
-					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</section>
 	);
 }
