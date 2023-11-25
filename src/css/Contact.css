@@ -1,0 +1,9 @@
+.contact-form-field {
+	outline: none;
+	border-bottom: 1px solid var(--black-color);
+	min-width: 200px;
+	min-height: 22px;
+	height: 22px;
+	transition: height 0.3s ease;
+	/* TODO: set max width */
+}

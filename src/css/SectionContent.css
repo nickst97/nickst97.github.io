@@ -7,13 +7,19 @@ section {
 	justify-content: space-between;
 }
 
-/* .section-item {
-	border: 1px solid red;
-} */
+.section-item {
+	display: flex;
+	flex-direction: column;
+}
 
 .section-item-title {
 	font-weight: bold;
 	font-size: 24px;
+}
+
+.section-item-description {
+	font-weight: normal;
+	font-size: 16px;
 }
 
 .section-main-content {

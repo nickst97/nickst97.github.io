@@ -40,7 +40,9 @@ body {
 }
 
 a,
-button {
+button,
+input,
+textarea {
 	all: unset;
 }
 
