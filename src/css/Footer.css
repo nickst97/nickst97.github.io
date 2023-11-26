@@ -1,7 +1,87 @@
-footer {
+#footer-mask {
+	position: absolute;
 	display: flex;
+	width: 100vw;
+	height: 200px;
+	bottom: 0;
+	left: 0;
+}
+
+#footer-mask-left,
+#footer-mask-right {
+	height: 100%;
+	width: calc(var(--page-padding) - 1px);
+	background-color: var(--white-color);
+}
+
+#footer-mask-left {
+	margin-right: auto;
+}
+
+#footer-mask-right {
+	margin-left: auto;
+}
+
+#footer-mask-center {
+	display: flex;
+	flex-direction: column;
 	width: 100%;
-	height: calc(67px + var(--page-padding));
-	background-color: red;
-	margin-top: auto;
+	height: 100%;
+}
+
+#footer-mask-center-top {
+	height: calc(100% - var(--page-padding));
+	width: calc(100% - 4px);
+	background-color: transparent;
+	border: 2px solid var(--black-color);
+	border-top: none;
+}
+
+#footer-mask-center-bottom {
+	width: 100%;
+	height: var(--page-padding);
+	background-color: var(--white-color);
+}
+
+.ocean {
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+/* TODO: store the image */
+.wave {
+	-webkit-mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/wavePurple.svg)
+		repeat-x;
+	mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/wavePurple.svg)
+		repeat-x;
+	position: absolute;
+	bottom: -55px;
+	width: 6400px;
+	height: 198px;
+	animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite,
+		swell 8s ease -1.25s infinite;
+	transform: translate3d(0, 0, 0);
+	z-index: -1;
+}
+
+@keyframes wave {
+	0% {
+		margin-left: 0;
+	}
+	100% {
+		margin-left: -1600px;
+	}
+}
+@keyframes swell {
+	0%,
+	100% {
+		transform: translate3d(0, -40px, 0);
+	}
+	50% {
+		transform: translate3d(0, -10px, 0);
+	}
 }

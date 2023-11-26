@@ -24,7 +24,8 @@
 /* TODO: remove other Mabry fronts that I don't need */
 
 :root {
-	--black-color: black;
+	--black-color: #121212;
+	--white-color: #ededed;
 	--page-padding: 24px;
 	--page-border-width: 2px;
 }
@@ -37,6 +38,8 @@ body {
 	height: calc(100vh - 2 * var(--page-padding));
 	border: var(--page-border-width) solid var(--black-color);
 	margin: calc(var(--page-padding) - var(--page-border-width)) auto 0;
+	overflow: hidden;
+	background-color: var(--white-color);
 }
 
 a,
