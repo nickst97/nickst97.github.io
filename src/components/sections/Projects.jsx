@@ -2,35 +2,41 @@ import { useState } from "react";
 import "../../css/Projects.css";
 
 const projectItems = [
-	{
-		title: "Webler",
-		description: "Product / Alma Economics",
-		link: "https://www.google.com",
-	},
+	// {
+	// 	title: "Webler",
+	// 	description: "Product / Alma Economics",
+	// 	link: "https://www.google.com",
+	// 	color: "#ffffff",
+	// },
 	{
 		title: "Evidence Map",
 		description: "Product / Alma Economics",
 		link: "https://www.google.com",
+		color: "#3B4559",
 	},
 	{
 		title: "Homeless Substance Use Programme",
 		description: "Dashboard / Alma Economics",
 		link: "https://www.google.com",
+		color: "#651e7a",
 	},
 	{
 		title: "Geolocating News",
 		description: "Dashboard / Personal Project",
 		link: "https://www.google.com",
+		color: "#e45340",
 	},
 	{
 		title: "Impact Estimator",
 		description: "Dashboard / Alma Economics",
 		link: "https://www.google.com",
+		color: "#fcee21",
 	},
 	{
 		title: "Card Tracker",
 		description: "Add-in / Personal Project",
 		link: "https://www.google.com",
+		color: "#286f2b",
 	},
 ];
 
@@ -45,7 +51,14 @@ export default function Projects({ setWaveColor }) {
 						className="section-item"
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
-						onMouseOver={() => setSelectedProject(projectItem)}
+						onMouseOver={() => {
+							setSelectedProject(projectItem);
+							setWaveColor(projectItem.color);
+						}}
+						onMouseLeave={() => {
+							setSelectedProject(null);
+							setWaveColor(null);
+						}}
 					>
 						<div className="section-item-title">
 							{projectItem.title}
