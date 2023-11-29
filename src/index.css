@@ -26,6 +26,8 @@
 :root {
 	--black-color: #121212;
 	--white-color: #ededed;
+	--success-color: #00c51b;
+	--error-color: #c5001b;
 	--page-padding: 24px;
 	--page-border-width: 2px;
 }

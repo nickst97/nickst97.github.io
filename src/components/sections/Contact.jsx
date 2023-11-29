@@ -1,53 +1,155 @@
 import { useState } from "react";
 import "../../css/Contact.css";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
-	// const [numOfNewLines, setNumOfNewLines] = useState(0);
+	const [emailSentSuccessfully, setEmailSentSuccessfully] = useState(null);
+	const [emailResultMessage, setEmailResultMessage] = useState(null);
+	const [fieldWithError, setFieldWithError] = useState(null);
+	const fieldNames = ["name", "email", "message"];
+	const fieldErrorMessages = {
+		name: "Please enter your name",
+		email: "Please enter your email",
+		message: "Please type a message",
+	};
 
-	// const handleInput = (e) => {
-	// 	const element = document.getElementById("contact-form-field-message");
+	const sendEmail = () => {
+		const formContent = {};
+		removeWarning();
+		fieldNames.forEach((fieldName) => {
+			formContent[fieldName] = document
+				.getElementById("contact-form-field-" + fieldName)
+				.innerHTML.trim();
+		});
 
-	// 	let newLines = element.getElementsByTagName("div").length;
-	// 	console.log(element);
-	// 	if (element.offsetWidth >= 650) {
-	// 		console.log("hey");
-	// 		newLines += 1;
-	// 	}
-	// 	setNumOfNewLines(newLines);
-	// };
+		// TODO: remove this when project is finished
+		if (checkFormValidity(formContent)) {
+			if (process.env.NODE_ENV !== "development") {
+				emailjs
+					.send(
+						process.env.REACT_APP_EMAILJS_SERVICE_ID,
+						process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+						formContent,
+						process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+					)
+					.then(
+						function () {
+							setEmailSentSuccessfully(true);
+							setEmailResultMessage("Email sent successfully");
+						},
+						function () {
+							// TODO: grab the error from here
+							setEmailSentSuccessfully(false);
+							setEmailResultMessage("Email failed to send");
+						}
+					);
+			}
+		}
+		// TODO: remove this when project is finished
+		setEmailSentSuccessfully(true);
+		setEmailResultMessage("Email sent successfully");
+	};
 
-	// const calculateHeight = () => {
-	// 	return (numOfNewLines + 1) * 22 + "px";
-	// };
+	const emailIsValid = (email) => {
+		const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+		if (!emailRegex.test(email)) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
+	const removeWarning = (fieldName = null) => {
+		if (fieldWithError === fieldName || fieldWithError === null) {
+			setEmailSentSuccessfully(null);
+			setEmailResultMessage(null);
+			setFieldWithError(null);
+		}
+	};
+
+	const checkFormValidity = (formContent) => {
+		let everythingWasValid = true;
+		fieldNames.reverse().forEach((fieldName) => {
+			if (formContent[fieldName] === "") {
+				setEmailSentSuccessfully(false);
+				setFieldWithError(fieldName);
+				setEmailResultMessage(fieldErrorMessages[fieldName]);
+				everythingWasValid = false;
+			} else if (
+				fieldName === "email" &&
+				!emailIsValid(formContent[fieldName])
+			) {
+				setEmailSentSuccessfully(false);
+				setFieldWithError(fieldName);
+				setEmailResultMessage("Please enter a valid email address");
+				everythingWasValid = false;
+			}
+		});
+		return everythingWasValid;
+	};
 
 	return (
 		<section id="section-contact">
 			<div className="section-main-content" id="contact-form">
-				<div className="section-item" id="contact-form-name">
+				<div
+					className={`section-item ${
+						fieldWithError === "name" ? "style-error" : ""
+					}`}
+					id="contact-form-name"
+				>
 					<div className="section-item-title">Name</div>
 					<div
 						className="section-item-description contact-form-field"
+						id="contact-form-field-name"
+						onInput={() => removeWarning("name")}
 						contentEditable
-					></div>
+					/>
 				</div>
-				<div className="section-item" id="contact-form-email">
+				<div
+					className={`section-item ${
+						fieldWithError === "email" ? "style-error" : ""
+					}`}
+					id="contact-form-email"
+				>
 					<div className="section-item-title">Email</div>
 					<div
 						className="section-item-description contact-form-field"
+						id="contact-form-field-email"
+						onInput={() => removeWarning("email")}
 						contentEditable
-					></div>
+					/>
 				</div>
-				<div className="section-item" id="contact-form-message">
+				<div
+					className={`section-item ${
+						fieldWithError === "message" ? "style-error" : ""
+					}`}
+					id="contact-form-message"
+				>
 					<div className="section-item-title">Message</div>
 					<div
 						className="section-item-description contact-form-field"
-						contentEditable
 						id="contact-form-field-message"
-					></div>
+						onInput={() => removeWarning("message")}
+						contentEditable
+					/>
 				</div>
-				<button className="nav-item">
-					<span>Send</span>
-				</button>
+				<div
+					className="section-item"
+					id="contact-form-button-container"
+				>
+					<div
+						className={`section-item-title ${
+							emailSentSuccessfully
+								? "style-success"
+								: "style-error"
+						}`}
+					>
+						{emailResultMessage}
+					</div>
+					<button className="nav-item" onClick={sendEmail}>
+						<span>Send</span>
+					</button>
+				</div>
 			</div>
 		</section>
 	);

@@ -52,12 +52,9 @@
 	z-index: -1;
 }
 
-/* TODO: store the image */
 .wave {
-	-webkit-mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/wavePurple.svg)
-		repeat-x;
-	mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/wavePurple.svg)
-		repeat-x;
+	-webkit-mask: url("../images/wave.svg") repeat-x;
+	mask: url("../images/wave.svg") repeat-x;
 	position: absolute;
 	bottom: -55px;
 	width: 6400px;

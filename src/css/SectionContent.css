@@ -29,8 +29,25 @@ section {
 	flex-direction: column;
 	height: 100%;
 	width: auto;
-	align-items: end;
+	align-items: flex-end;
 	justify-content: center;
 	text-align: right;
 	gap: 24px;
+}
+
+.style-error,
+.style-error > * {
+	color: var(--error-color);
+}
+
+.style-error .section-item-description {
+	border-bottom: 1px solid var(--error-color);
+}
+.style-success,
+.style-success > * {
+	color: var(--success-color);
+}
+
+.style-success .section-item-description {
+	border-bottom: 1px solid var(--success-color);
 }

@@ -3,7 +3,7 @@ nav {
 	flex-direction: column;
 	height: 100%;
 	width: auto;
-	align-items: start;
+	align-items: flex-start;
 	justify-content: center;
 	gap: 12px;
 }
