@@ -17,11 +17,13 @@ section {
 	font-size: 24px;
 	line-height: 1;
 	margin-bottom: 5px;
+	transition: all 1s ease;
 }
 
 .section-item-description {
 	font-weight: normal;
 	font-size: 16px;
+	transition: all 1s ease;
 }
 
 .section-main-content {
@@ -33,21 +35,4 @@ section {
 	justify-content: center;
 	text-align: right;
 	gap: 24px;
-}
-
-.style-error,
-.style-error > * {
-	color: var(--error-color);
-}
-
-.style-error .section-item-description {
-	border-bottom: 1px solid var(--error-color);
-}
-.style-success,
-.style-success > * {
-	color: var(--success-color);
-}
-
-.style-success .section-item-description {
-	border-bottom: 1px solid var(--success-color);
 }

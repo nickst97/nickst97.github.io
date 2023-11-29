@@ -3,6 +3,7 @@ export default function NavBar({
 	sectionNames,
 	selectedSection,
 	setSelectedSection,
+	setWaveColor,
 }) {
 	return (
 		<nav>
@@ -14,7 +15,10 @@ export default function NavBar({
 							? "nav-item-selected"
 							: "")
 					}
-					onClick={() => setSelectedSection(sectionName)}
+					onClick={() => {
+						setSelectedSection(sectionName);
+						setWaveColor(null);
+					}}
 				>
 					<span>{sectionName}</span>
 				</button>

@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../css/Contact.css";
 import emailjs from "@emailjs/browser";
 
-export default function Contact() {
-	const [emailSentSuccessfully, setEmailSentSuccessfully] = useState(null);
+export default function Contact({ setWaveColor }) {
+	const [emailSentStatus, setEmailSentStatus] = useState();
 	const [emailResultMessage, setEmailResultMessage] = useState(null);
 	const [fieldWithError, setFieldWithError] = useState(null);
 	const fieldNames = ["name", "email", "message"];
@@ -13,9 +13,22 @@ export default function Contact() {
 		message: "Please type a message",
 	};
 
+	useEffect(() => {
+		if (emailSentStatus) {
+			setWaveColor("var(--" + emailSentStatus + "-color");
+		} else {
+			setWaveColor(null);
+		}
+		if (!emailSentStatus && emailResultMessage) {
+			setTimeout(() => {
+				setEmailResultMessage(null);
+			}, 950);
+		}
+	}, [emailSentStatus, emailResultMessage, setWaveColor]);
+
 	const sendEmail = () => {
 		const formContent = {};
-		removeWarning();
+		emailSentStatus && removeWarning();
 		fieldNames.forEach((fieldName) => {
 			formContent[fieldName] = document
 				.getElementById("contact-form-field-" + fieldName)
@@ -34,20 +47,20 @@ export default function Contact() {
 					)
 					.then(
 						function () {
-							setEmailSentSuccessfully(true);
+							setEmailSentStatus("success");
 							setEmailResultMessage("Email sent successfully");
 						},
 						function () {
 							// TODO: grab the error from here
-							setEmailSentSuccessfully(false);
+							setEmailSentStatus("error");
 							setEmailResultMessage("Email failed to send");
 						}
 					);
 			}
+			// TODO: remove this when project is finished
+			setEmailSentStatus("success");
+			setEmailResultMessage("Email sent successfully");
 		}
-		// TODO: remove this when project is finished
-		setEmailSentSuccessfully(true);
-		setEmailResultMessage("Email sent successfully");
 	};
 
 	const emailIsValid = (email) => {
@@ -61,8 +74,7 @@ export default function Contact() {
 
 	const removeWarning = (fieldName = null) => {
 		if (fieldWithError === fieldName || fieldWithError === null) {
-			setEmailSentSuccessfully(null);
-			setEmailResultMessage(null);
+			setEmailSentStatus(null);
 			setFieldWithError(null);
 		}
 	};
@@ -71,7 +83,7 @@ export default function Contact() {
 		let everythingWasValid = true;
 		fieldNames.reverse().forEach((fieldName) => {
 			if (formContent[fieldName] === "") {
-				setEmailSentSuccessfully(false);
+				setEmailSentStatus("error");
 				setFieldWithError(fieldName);
 				setEmailResultMessage(fieldErrorMessages[fieldName]);
 				everythingWasValid = false;
@@ -79,7 +91,7 @@ export default function Contact() {
 				fieldName === "email" &&
 				!emailIsValid(formContent[fieldName])
 			) {
-				setEmailSentSuccessfully(false);
+				setEmailSentStatus("error");
 				setFieldWithError(fieldName);
 				setEmailResultMessage("Please enter a valid email address");
 				everythingWasValid = false;
@@ -139,9 +151,9 @@ export default function Contact() {
 				>
 					<div
 						className={`section-item-title ${
-							emailSentSuccessfully
-								? "style-success"
-								: "style-error"
+							emailSentStatus
+								? "style-" + emailSentStatus + " visible"
+								: "hidden"
 						}`}
 					>
 						{emailResultMessage}

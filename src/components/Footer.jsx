@@ -1,22 +1,22 @@
 import "../css/Footer.css";
-export default function Footer() {
-	const waveColor = "var(--black-color)";
-
+export default function Footer({ waveColor }) {
 	return (
 		<footer>
 			<div id="footer-mask">
-				<div id="footer-mask-left"></div>
+				<div id="footer-mask-left" />
 				<div id="footer-mask-center">
-					<div id="footer-mask-center-top"></div>
-					<div id="footer-mask-center-bottom"></div>
+					<div id="footer-mask-center-top" />
+					<div id="footer-mask-center-bottom" />
 				</div>
-				<div id="footer-mask-right"></div>
+				<div id="footer-mask-right" />
 			</div>
-			<div className="ocean" style={{ backgroundColor: waveColor }}>
+			<div className="ocean">
 				<div
 					className="wave"
-					style={{ backgroundColor: waveColor }}
-				></div>
+					style={{
+						backgroundColor: waveColor,
+					}}
+				/>
 			</div>
 		</footer>
 	);

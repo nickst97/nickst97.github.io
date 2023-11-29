@@ -4,15 +4,19 @@ import Projects from "./sections/Projects";
 import AwardsCertifications from "./sections/AwardsCertifications";
 import Contact from "./sections/Contact";
 
-export default function SectionContent({ selectedSection }) {
+export default function SectionContent({ selectedSection, setWaveColor }) {
 	return (
 		<>
-			{selectedSection === "Home" && <Home />}
-			{selectedSection === "Projects" && <Projects />}
-			{selectedSection === "Awards & Certifications" && (
-				<AwardsCertifications />
+			{selectedSection === "Home" && <Home setWaveColor={setWaveColor} />}
+			{selectedSection === "Projects" && (
+				<Projects setWaveColor={setWaveColor} />
 			)}
-			{selectedSection === "Contact" && <Contact />}
+			{selectedSection === "Awards & Certifications" && (
+				<AwardsCertifications setWaveColor={setWaveColor} />
+			)}
+			{selectedSection === "Contact" && (
+				<Contact setWaveColor={setWaveColor} />
+			)}
 		</>
 	);
 }

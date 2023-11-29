@@ -9,7 +9,7 @@ const awardsCertificationsItems = [
 	},
 ];
 
-export default function AwardsCertifications() {
+export default function AwardsCertifications({ setWaveColor }) {
 	return (
 		<section id="section-awards-certifications">
 			<div className="section-main-content">

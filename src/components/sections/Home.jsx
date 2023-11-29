@@ -1,6 +1,6 @@
 import "../../css/Home.css";
 
-export default function Home() {
+export default function Home({ setWaveColor }) {
 	return (
 		<section id="section-home">
 			{/* TODO: add the same text to cv */}

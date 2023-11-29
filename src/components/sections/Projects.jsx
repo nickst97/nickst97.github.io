@@ -34,7 +34,7 @@ const projectItems = [
 	},
 ];
 
-export default function Projects() {
+export default function Projects({ setWaveColor }) {
 	const [selectedProject, setSelectedProject] = useState(null);
 
 	return (

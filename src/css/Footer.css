@@ -61,8 +61,10 @@
 	height: 198px;
 	animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite,
 		swell 8s ease -1.25s infinite;
-	transform: translate3d(0, 0, 0);
 	z-index: -1;
+	transform: translate3d(0, 0, 0);
+	background-color: var(--black-color);
+	transition: all 1s ease;
 }
 
 @keyframes wave {
