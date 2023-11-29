@@ -5,6 +5,7 @@ section {
 	width: calc(100% - 220px);
 	align-items: center;
 	justify-content: space-between;
+	animation: fadeIn 1s;
 }
 
 .section-item {
@@ -17,13 +18,13 @@ section {
 	font-size: 24px;
 	line-height: 1;
 	margin-bottom: 5px;
-	transition: all 1s ease;
+	transition: all var(--transition-duration) ease;
 }
 
 .section-item-description {
 	font-weight: normal;
 	font-size: 16px;
-	transition: all 1s ease;
+	transition: all var(--transition-duration) ease;
 }
 
 .section-main-content {

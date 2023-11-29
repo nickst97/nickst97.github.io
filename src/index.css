@@ -30,6 +30,7 @@
 	--error-color: #c5001b;
 	--page-padding: 24px;
 	--page-border-width: 2px;
+	--transition-duration: 1s;
 }
 
 body {
@@ -64,4 +65,29 @@ main {
 	height: 100%;
 	width: 100%;
 	justify-content: space-between;
+}
+
+.visible {
+	animation: fadeIn var(--transition-duration);
+}
+.hidden {
+	animation: fadeOut var(--transition-duration);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }
