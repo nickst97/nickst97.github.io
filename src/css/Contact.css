@@ -7,6 +7,7 @@
 	transition: height 0.3s ease;
 	max-width: calc(100vw - 250px);
 	transition: all var(--transition-duration) ease;
+	cursor: text;
 }
 
 #contact-form-button-container {
