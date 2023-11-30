@@ -52,7 +52,7 @@ export default function Projects({ setWaveColor }) {
 						className="section-item"
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
-						onMouseOver={() => {
+						onMouseMove={() => {
 							setShowThumbnail(true);
 							setSelectedProject(projectItem);
 							setWaveColor(projectItem.color);

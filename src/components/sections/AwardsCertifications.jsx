@@ -29,7 +29,7 @@ export default function AwardsCertifications({ setWaveColor }) {
 							"awards-cerification-container-" +
 							awardsCertificationsItem.title
 						}
-						onMouseOver={() => {
+						onMouseMove={() => {
 							setWaveColor(awardsCertificationsItem.color);
 						}}
 						onMouseLeave={() => {

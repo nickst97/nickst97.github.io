@@ -11,7 +11,7 @@
 #footer-mask-right {
 	height: 100%;
 	width: calc(var(--page-padding) - 1px);
-	background-color: var(--white-color);
+	background-color: var(--secondary-color);
 }
 
 #footer-mask-left {
@@ -33,14 +33,14 @@
 	height: calc(100% - var(--page-padding));
 	width: calc(100% - 4px);
 	background-color: transparent;
-	border: 2px solid var(--black-color);
+	border: 2px solid var(--primary-color);
 	border-top: none;
 }
 
 #footer-mask-center-bottom {
 	width: 100%;
 	height: var(--page-padding);
-	background-color: var(--white-color);
+	background-color: var(--secondary-color);
 }
 
 .ocean {
@@ -63,7 +63,7 @@
 		swell 8s ease -1.25s infinite;
 	z-index: -1;
 	transform: translate3d(0, 0, 0);
-	background-color: var(--black-color);
+	background-color: var(--primary-color);
 	transition: all var(--transition-duration) ease;
 }
 
