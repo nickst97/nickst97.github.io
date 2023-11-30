@@ -87,7 +87,6 @@ export default function Projects({ setWaveColor }) {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						{/* TODO: take screenshot with the right resolution */}
 						<img
 							src={require("../../images/project thumbnails/md/" +
 								selectedProject.title +

@@ -3,7 +3,6 @@ import "../../css/Home.css";
 export default function Home({ setWaveColor }) {
 	return (
 		<section id="section-home">
-			{/* TODO: add the same text to cv */}
 			{/* Revisit how it looks regarding line breaks */}
 			<div className="section-main-content">
 				<div className="section-item">

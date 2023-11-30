@@ -21,7 +21,6 @@
 	src: url("fonts/Mabry/MabryPro-Black.woff") format("woff");
 	font-weight: 900;
 }
-/* TODO: remove other Mabry fronts that I don't need */
 
 :root {
 	--black-color: #121212;
@@ -50,6 +49,10 @@ button,
 input,
 textarea {
 	all: unset;
+}
+
+a {
+	cursor: pointer;
 }
 
 #root {

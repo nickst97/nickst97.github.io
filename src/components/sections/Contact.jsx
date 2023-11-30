@@ -51,7 +51,6 @@ export default function Contact({ setWaveColor }) {
 							setEmailResultMessage("Email sent successfully");
 						},
 						function () {
-							// TODO: grab the error from here
 							setEmailSentStatus("error");
 							setEmailResultMessage("Email failed to send");
 						}
