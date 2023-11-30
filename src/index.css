@@ -71,7 +71,7 @@ main {
 	animation: fadeIn var(--transition-duration);
 }
 .hidden {
-	animation: fadeOut var(--transition-duration);
+	animation: fadeOut 0.1s;
 }
 
 @keyframes fadeIn {

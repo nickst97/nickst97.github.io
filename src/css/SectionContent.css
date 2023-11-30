@@ -5,7 +5,7 @@ section {
 	width: calc(100% - 220px);
 	align-items: center;
 	justify-content: space-between;
-	animation: fadeIn 1s;
+	animation: fadeIn var(--transition-duration);
 }
 
 .section-item {

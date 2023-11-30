@@ -7,7 +7,6 @@
 	border: 1px solid var(--black-color);
 	margin: 0 auto;
 	height: 300px;
-	animation: fadeIn 1s;
 }
 
 #selected-project-thumbnail a {

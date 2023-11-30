@@ -22,7 +22,7 @@ export default function Contact({ setWaveColor }) {
 		if (!emailSentStatus && emailResultMessage) {
 			setTimeout(() => {
 				setEmailResultMessage(null);
-			}, 950);
+			}, 100);
 		}
 	}, [emailSentStatus, emailResultMessage, setWaveColor]);
 

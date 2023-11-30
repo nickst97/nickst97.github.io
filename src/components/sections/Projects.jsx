@@ -42,6 +42,7 @@ const projectItems = [
 
 export default function Projects({ setWaveColor }) {
 	const [selectedProject, setSelectedProject] = useState(null);
+	const [hideThumbnail, setShowThumbnail] = useState(false);
 
 	return (
 		<section id="section-projects">
@@ -52,12 +53,16 @@ export default function Projects({ setWaveColor }) {
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
 						onMouseOver={() => {
+							setShowThumbnail(true);
 							setSelectedProject(projectItem);
 							setWaveColor(projectItem.color);
 						}}
 						onMouseLeave={() => {
-							setSelectedProject(null);
+							setShowThumbnail(false);
 							setWaveColor(null);
+							setTimeout(() => {
+								setSelectedProject(null);
+							}, 100);
 						}}
 					>
 						<div className="section-item-title">
@@ -69,9 +74,12 @@ export default function Projects({ setWaveColor }) {
 					</div>
 				))}
 			</div>
-			{/* TODO: make showing the thumbnails faster */}
+
 			{selectedProject && (
-				<div id="selected-project-thumbnail">
+				<div
+					id="selected-project-thumbnail"
+					className={hideThumbnail ? "visible" : "hidden"}
+				>
 					<a
 						href={
 							selectedProject.link
@@ -81,7 +89,7 @@ export default function Projects({ setWaveColor }) {
 					>
 						{/* TODO: take screenshot with the right resolution */}
 						<img
-							src={require("../../images/project thumbnails/" +
+							src={require("../../images/project thumbnails/md/" +
 								selectedProject.title +
 								".png")}
 							alt={selectedProject.title + " thumbnail"}
