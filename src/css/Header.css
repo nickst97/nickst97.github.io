@@ -14,6 +14,16 @@ header {
 	line-height: 63px;
 	margin-left: -7px;
 	margin-right: auto;
+	cursor: pointer;
+}
+
+#title-container > div {
+	transition: calc(var(--transition-duration) / 2);
+}
+
+#my-name-container {
+	position: absolute;
+	left: calc(2 * var(--page-padding) - 7px);
 }
 
 #icons-container {

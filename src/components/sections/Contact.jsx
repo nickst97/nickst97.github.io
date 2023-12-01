@@ -23,6 +23,7 @@ export default function Contact({ setWaveColor }) {
 			setTimeout(() => {
 				setEmailResultMessage(null);
 			}, 100);
+			//TODO: clean this timeout (and the rest)
 		}
 	}, [emailSentStatus, emailResultMessage, setWaveColor]);
 

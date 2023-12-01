@@ -6,6 +6,9 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
 	const [darkMode, setDarkMode] = useState(false);
+	const [hoverState, setTitleHoverState] = useState();
+	const [userHoveredTitleBefore, setUserHoveredTitleBefore] = useState(false);
+	const [isTimeoutActive, setIsTimeoutActive] = useState(false);
 
 	useEffect(() => {
 		const primaryColor = darkMode ? "white" : "black";
@@ -44,12 +47,58 @@ export default function Header() {
 			"/favicon-" + faviconTheme + "/site.webmanifest";
 	}, [darkMode]);
 
-	// ... rest of your component code ...
+	useEffect(() => {
+		if (hoverState) {
+			const titleComponentToHide = hoverState;
+			const titleComponentToShow =
+				hoverState === "domain" ? "my-name" : "domain";
+
+			document.querySelector(
+				"#" + titleComponentToHide + "-container"
+			).style.opacity = 0;
+			document.querySelector(
+				"#" + titleComponentToShow + "-container"
+			).style.display = "flex";
+			document.querySelector(
+				"#" + titleComponentToShow + "-container"
+			).style.opacity = 0;
+
+			setIsTimeoutActive(true);
+			setTimeout(() => {
+				document.querySelector(
+					"#" + titleComponentToShow + "-container"
+				).style.opacity = 1;
+				document.querySelector(
+					"#" + titleComponentToHide + "-container"
+				).style.display = "none";
+				setIsTimeoutActive(false); // Set timeout as completed
+			}, 1000);
+		}
+	}, [hoverState]);
 
 	return (
 		<header>
-			{/* TODO: add Nikolas Stavrakakis */}
-			<div id="title-container">nickst97.dev</div>
+			<div id="title-container">
+				<div
+					id="domain-container"
+					onMouseEnter={() =>
+						!userHoveredTitleBefore
+							? setUserHoveredTitleBefore(true)
+							: !isTimeoutActive && setTitleHoverState("domain")
+					}
+				>
+					nickst97.dev
+				</div>
+				<div
+					id="my-name-container"
+					style={{ display: "none" }}
+					onMouseLeave={() =>
+						!isTimeoutActive && setTitleHoverState("my-name")
+					}
+				>
+					Nikolas Stavrakakis
+				</div>
+			</div>
 			<div id="icons-container">
 				<div id="light-mode-icon">
 					<FontAwesomeIcon

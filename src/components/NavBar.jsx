@@ -19,6 +19,7 @@ export default function NavBar({
 						setSelectedSection(sectionName);
 						setWaveColor(null);
 					}}
+					key={"button-" + sectionName}
 				>
 					<span>{sectionName}</span>
 				</button>
