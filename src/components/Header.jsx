@@ -8,8 +8,8 @@ export default function Header() {
 	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
-		const primaryColor = darkMode ? "black" : "white";
-		const secondaryColor = darkMode ? "white" : "black";
+		const primaryColor = darkMode ? "white" : "black";
+		const secondaryColor = darkMode ? "black" : "white";
 		const faviconTheme = darkMode ? "dark" : "light";
 
 		const root = document.querySelector(":root");
