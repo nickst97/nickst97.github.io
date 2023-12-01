@@ -8,17 +8,43 @@ export default function Header() {
 	const [darkMode, setDarkMode] = useState(false);
 
 	useEffect(() => {
-		const root = document.documentElement.style;
+		const primaryColor = darkMode ? "black" : "white";
+		const secondaryColor = darkMode ? "white" : "black";
+		const faviconTheme = darkMode ? "dark" : "light";
 
-		root.setProperty(
+		const root = document.querySelector(":root");
+		root.style.setProperty(
 			"--primary-color",
-			darkMode ? "var(--white-color)" : "var(--black-color)"
+			"var(--" + primaryColor + "-color)"
 		);
-		root.setProperty(
+
+		root.style.setProperty(
 			"--secondary-color",
-			darkMode ? "var(--black-color)" : "var(--white-color)"
+			"var(--" + secondaryColor + "-color)"
 		);
+
+		const favicons = document.querySelectorAll("link[rel='icon']");
+		favicons.forEach((favicon) => {
+			const faviconType = favicon.href.includes("chrome")
+				? "android-chrome"
+				: "favicon";
+			favicon.href =
+				"/favicon-" +
+				faviconTheme +
+				"/" +
+				faviconType +
+				"-" +
+				favicon.sizes.value +
+				".png";
+		});
+
+		document.querySelector("link[rel~='apple-touch-icon']").href =
+			"/favicon-" + faviconTheme + "/apple-touch-icon.png";
+		document.querySelector("link[rel~='manifest']").href =
+			"/favicon-" + faviconTheme + "/site.webmanifest";
 	}, [darkMode]);
+
+	// ... rest of your component code ...
 
 	return (
 		<header>
