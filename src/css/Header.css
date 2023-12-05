@@ -18,7 +18,7 @@ header {
 }
 
 #title-container > div {
-	transition: calc(var(--transition-duration) / 2);
+	transition: calc(var(--transition-duration));
 }
 
 #my-name-container {
