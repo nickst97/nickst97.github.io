@@ -17,6 +17,7 @@ nav {
 	height: 21px;
 	padding: 5px 10px;
 	font-weight: 600;
+	align-items: center;
 	transform: skew(-22deg);
 	cursor: pointer;
 	backface-visibility: initial !important;
@@ -33,4 +34,25 @@ nav {
 .nav-item-selected {
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
+}
+
+@media only screen and (max-width: 830px) {
+	nav {
+		flex-direction: row;
+		height: auto;
+		width: 100%;
+		flex-wrap: wrap;
+	}
+}
+
+@media only screen and (max-height: 800px) {
+	.nav-item {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-height: 730px) {
+	.nav-item {
+		font-size: 2vh;
+	}
 }

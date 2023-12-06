@@ -17,6 +17,10 @@
 	margin-right: 8px;
 }
 
+#contact-form-button-container > div {
+	margin-bottom: 0px;
+}
+
 .style-error,
 .style-error > * {
 	color: var(--error-color);
@@ -32,4 +36,14 @@
 
 .style-success .section-item-description {
 	border-bottom: 1px solid var(--success-color);
+}
+
+@media only screen and (max-width: 830px) {
+	.contact-form-field {
+		min-height: 3.5vw;
+	}
+	#contact-form-button-container {
+		flex-direction: column-reverse;
+		margin-right: 0px;
+	}
 }

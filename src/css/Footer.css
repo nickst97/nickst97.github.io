@@ -25,13 +25,13 @@
 #footer-mask-center {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: calc(100% - 2 * var(--page-padding) + 16px);
 	height: 100%;
+	margin: 0 auto;
 }
 
 #footer-mask-center-top {
 	height: calc(100% - var(--page-padding));
-	width: calc(100% - 4px);
 	background-color: transparent;
 	border: 2px solid var(--primary-color);
 	border-top: none;
@@ -82,5 +82,11 @@
 	}
 	50% {
 		transform: translate3d(0, -10px, 0);
+	}
+}
+
+@media only screen and (max-height: 800px) {
+	.wave {
+		bottom: -20vh;
 	}
 }

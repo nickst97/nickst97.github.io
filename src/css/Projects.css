@@ -19,3 +19,18 @@
 	height: 100%;
 	width: 100%;
 }
+
+@media only screen and (max-width: 850px) {
+	#selected-project-thumbnail {
+		position: absolute;
+		top: calc(2 * var(--page-padding));
+	}
+
+	#projects-list > div {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+}

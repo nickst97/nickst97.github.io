@@ -6,6 +6,7 @@ section {
 	align-items: center;
 	justify-content: space-between;
 	animation: fadeIn var(--transition-duration);
+	z-index: 1;
 }
 
 .section-item {
@@ -37,4 +38,64 @@ section {
 	justify-content: center;
 	text-align: right;
 	gap: 24px;
+}
+
+@media only screen and (max-width: 830px) {
+	section {
+		flex-direction: column;
+		height: auto;
+		width: 100%;
+		margin: auto;
+	}
+
+	.section-main-content {
+		text-align: center;
+		align-items: center;
+		height: auto;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 130px) {
+	section {
+		flex-direction: column;
+		height: auto;
+		width: 100%;
+		margin: auto;
+	}
+
+	.section-item-title {
+		font-size: 5.5vw;
+	}
+
+	.section-item-title {
+		font-size: 5.5vw;
+	}
+
+	.section-item-description {
+		font-size: 3.5vw;
+	}
+
+	.section-main-content {
+		text-align: center;
+		align-items: center;
+		height: auto;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-height: 750px) {
+	.section-item-description {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-height: 730px) {
+	.section-item-title {
+		font-size: 3vh;
+	}
+
+	.section-item-description {
+		font-size: 2vh;
+	}
 }

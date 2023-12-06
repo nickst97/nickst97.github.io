@@ -69,9 +69,10 @@ a {
 #root {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: calc(100% - var(--page-padding) * 2);
 	height: calc(100% - var(--page-padding));
 	padding: var(--page-padding);
+	gap: var(--page-padding);
 }
 
 main {
@@ -103,5 +104,21 @@ main {
 	}
 	100% {
 		opacity: 0;
+	}
+}
+
+@media only screen and (max-width: 830px) {
+	body {
+		min-height: 100vh;
+		height: 750px;
+	}
+
+	#root {
+		gap: var(--page-padding);
+	}
+	main {
+		flex-direction: column;
+		height: auto;
+		gap: var(--page-padding);
 	}
 }

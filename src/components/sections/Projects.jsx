@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "../../css/Projects.css";
+import { useState, useEffect } from "react";
 
 const projectItems = [
 	// {
@@ -42,7 +42,66 @@ const projectItems = [
 
 export default function Projects({ setWaveColor }) {
 	const [selectedProject, setSelectedProject] = useState(null);
-	const [hideThumbnail, setShowThumbnail] = useState(false);
+	const [showThumbnail, setShowThumbnail] = useState(false);
+	const [thumbnailHeight, setThumbnailHeight] = useState(null);
+	const [pointerType, setPointerType] = useState();
+
+	useEffect(() => {
+		const detectPointerType = () => {
+			document.addEventListener("pointerdown", (event) => {
+				setPointerType(event.pointerType);
+			});
+		};
+
+		const handleResize = () => {
+			if (window.innerWidth <= 850) {
+				const headerElement = document.querySelector("header");
+				const navElement = document.querySelector("nav");
+
+				if (headerElement && navElement) {
+					const computedStyles = getComputedStyle(
+						document.documentElement
+					);
+					const pagePadding =
+						parseInt(
+							computedStyles.getPropertyValue("--page-padding"),
+							10
+						) || 0;
+
+					const combinedHeight =
+						headerElement.clientHeight +
+						navElement.clientHeight +
+						pagePadding;
+					setThumbnailHeight(combinedHeight);
+				}
+			}
+		};
+
+		// Initial setup on mount
+		handleResize();
+		detectPointerType();
+
+		// Add event listener for window resize
+		window.addEventListener("resize", handleResize);
+		// Clean up the event listener on component unmount
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []); // Empty dependency array to run effect only on mount and unmount
+
+	const chooseProject = (projectItem) => {
+		setShowThumbnail(true);
+		setSelectedProject(projectItem);
+		setWaveColor(projectItem.color);
+	};
+
+	const removeProject = () => {
+		setShowThumbnail(false);
+		setWaveColor(null);
+		setTimeout(() => {
+			setSelectedProject(null);
+		}, 100);
+	};
 
 	return (
 		<section id="section-projects">
@@ -52,17 +111,31 @@ export default function Projects({ setWaveColor }) {
 						className="section-item"
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
+						onClick={() => {
+							if (selectedProject) {
+								removeProject();
+								setTimeout(() => {
+									chooseProject(projectItem);
+								}, 300);
+							} else {
+								chooseProject(projectItem);
+							}
+						}}
 						onMouseMove={() => {
-							setShowThumbnail(true);
-							setSelectedProject(projectItem);
-							setWaveColor(projectItem.color);
+							if (
+								pointerType !== "touch" &&
+								pointerType !== "pen"
+							) {
+								chooseProject(projectItem);
+							}
 						}}
 						onMouseLeave={() => {
-							setShowThumbnail(false);
-							setWaveColor(null);
-							setTimeout(() => {
-								setSelectedProject(null);
-							}, 100);
+							if (
+								pointerType !== "touch" &&
+								pointerType !== "pen"
+							) {
+								removeProject();
+							}
 						}}
 					>
 						<div className="section-item-title">
@@ -74,11 +147,15 @@ export default function Projects({ setWaveColor }) {
 					</div>
 				))}
 			</div>
+			{/* TODO Homeless Substance Use Programme
+Dashboard / Alma Economics IN SMALL SCREENS */}
 
+			{/* todo: add on click elsewhere */}
 			{selectedProject && (
 				<div
 					id="selected-project-thumbnail"
-					className={hideThumbnail ? "visible" : "hidden"}
+					className={showThumbnail ? "visible" : "hidden"}
+					style={{ height: thumbnailHeight }}
 				>
 					<a
 						href={

@@ -46,3 +46,35 @@ header {
 #light-mode-icon:first-child {
 	transition: color 0.5s ease-in-out; /* Adjust the transition duration and easing as needed */
 }
+
+@media only screen and (max-width: 1150px) {
+	#title-container {
+		line-height: 7.5vw;
+		font-size: 7.5vw;
+	}
+}
+
+@media only screen and (max-width: 830px) {
+	header {
+		flex-direction: column-reverse;
+		height: auto;
+		gap: calc(var(--page-padding) / 2);
+	}
+	#title-container {
+		margin: 0 auto;
+		text-align: center;
+		height: auto;
+	}
+	#my-name-container {
+		white-space: nowrap;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+	}
+	#icons-container {
+		margin: 0 auto;
+	}
+	#icons-container > *:first-child {
+		margin-right: 0px;
+	}
+}
