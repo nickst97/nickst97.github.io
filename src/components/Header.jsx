@@ -30,7 +30,7 @@ export default function Header() {
 				? "android-chrome"
 				: "favicon";
 			favicon.href =
-				"/favicon-" +
+				"/favicon/favicon-" +
 				faviconTheme +
 				"/" +
 				faviconType +
@@ -40,9 +40,9 @@ export default function Header() {
 		});
 
 		document.querySelector("link[rel~='apple-touch-icon']").href =
-			"/favicon-" + faviconTheme + "/apple-touch-icon.png";
+			"/favicon/favicon-" + faviconTheme + "/apple-touch-icon.png";
 		document.querySelector("link[rel~='manifest']").href =
-			"/favicon-" + faviconTheme + "/site.webmanifest";
+			"/favicon/favicon-" + faviconTheme + "/site.webmanifest";
 	}, [darkMode]);
 
 	return (
