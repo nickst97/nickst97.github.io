@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.de258adc.css",
+    "main.js": "/static/js/main.ddc2e571.js",
+    "static/media/Homeless Substance Use Programme.png": "/static/media/Homeless Substance Use Programme.4ec9c09179ec0761f6fd.png",
+    "static/media/Geolocating News.png": "/static/media/Geolocating News.64cf24d8019aeac777c4.png",
+    "static/media/Card Tracker.png": "/static/media/Card Tracker.6dfdcf15418960158ae4.png",
+    "static/media/Impact Estimator.png": "/static/media/Impact Estimator.afbd55a00bb03ef9bb69.png",
+    "static/media/Evidence Map.png": "/static/media/Evidence Map.c4b2c505620e60d6efa0.png",
+    "static/media/MabryPro-Regular.woff": "/static/media/MabryPro-Regular.37994a2de268e5d8ad12.woff",
+    "static/media/MabryPro-Bold.woff": "/static/media/MabryPro-Bold.d77ae53dd00abe95491d.woff",
+    "static/media/MabryPro-Black.woff": "/static/media/MabryPro-Black.6f1b3089b6bcf371bdc5.woff",
+    "static/media/MabryPro-Medium.woff": "/static/media/MabryPro-Medium.e2bc855b5118b37e4844.woff",
+    "index.html": "/index.html",
+    "static/media/wave.svg": "/static/media/wave.38e831c20ac0bd04839c.svg",
+    "main.de258adc.css.map": "/static/css/main.de258adc.css.map",
+    "main.ddc2e571.js.map": "/static/js/main.ddc2e571.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de258adc.css",
+    "static/js/main.ddc2e571.js"
+  ]
+}
