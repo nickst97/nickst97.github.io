@@ -1,7 +1,7 @@
 {
 	"name": "nickst97.dev",
 	"version": "0.1.0",
-	"homepage": "https://nickst97.github.io/nickst97.dev/",
+	"homepage": "https://nickst97.github.io/",
 	"private": true,
 	"dependencies": {
 		"@emailjs/browser": "^3.11.0",
