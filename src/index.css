@@ -44,6 +44,7 @@ body {
 	overflow: hidden;
 	background-color: var(--secondary-color);
 	color: var(--primary-color);
+	min-height: 650px;
 }
 
 .light-mode {
@@ -119,6 +120,7 @@ main {
 	main {
 		flex-direction: column;
 		height: auto;
-		gap: var(--page-padding);
+		gap: calc(2 * var(--page-padding));
+		align-items: center;
 	}
 }

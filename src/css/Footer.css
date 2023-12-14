@@ -25,7 +25,7 @@
 #footer-mask-center {
 	display: flex;
 	flex-direction: column;
-	width: calc(100% - 2 * var(--page-padding) + 16px);
+	width: calc(100% - 2 * var(--page-padding) + 30px);
 	height: 100%;
 	margin: 0 auto;
 }
@@ -55,7 +55,7 @@
 .wave {
 	-webkit-mask: url("../images/wave.svg") repeat-x;
 	mask: url("../images/wave.svg") repeat-x;
-	position: absolute;
+	position: fixed;
 	bottom: -55px;
 	width: 6400px;
 	height: 198px;
@@ -88,5 +88,11 @@
 @media only screen and (max-height: 800px) {
 	.wave {
 		bottom: -20vh;
+	}
+}
+
+@media only screen and (max-width: 405px) {
+	#footer-mask-center {
+		width: calc(100% - 2 * var(--page-padding) + 12px);
 	}
 }
