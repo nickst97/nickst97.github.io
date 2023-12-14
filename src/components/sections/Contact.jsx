@@ -23,7 +23,7 @@ export default function Contact({ setWaveColor }) {
 			setTimeout(() => {
 				setEmailResultMessage(null);
 			}, 100);
-			//TODO: clean this timeout (and the rest)
+			//TODO: when finished: clean this timeout (and the rest)
 		}
 	}, [emailSentStatus, emailResultMessage, setWaveColor]);
 
@@ -36,7 +36,7 @@ export default function Contact({ setWaveColor }) {
 				.innerHTML.trim();
 		});
 
-		// TODO: remove this when project is finished
+		// TODO: when finished: remove this
 		if (checkFormValidity(formContent)) {
 			if (process.env.NODE_ENV !== "development") {
 				emailjs
@@ -57,7 +57,7 @@ export default function Contact({ setWaveColor }) {
 						}
 					);
 			}
-			// TODO: remove this when project is finished
+			// TODO: when finished: remove this
 			setEmailSentStatus("success");
 			setEmailResultMessage("Email sent successfully");
 		}

@@ -47,6 +47,13 @@ body {
 	min-height: 650px;
 }
 
+@media (hover: none) {
+	/* For devices that do not support hover (typically touch screens) */
+	body {
+		user-select: none;
+	}
+}
+
 .light-mode {
 	border: var(--page-border-width) solid var(--primary-color);
 }

@@ -15,7 +15,7 @@
 	width: auto;
 	border: 1px solid var(--black-color);
 }
-/* TODO: phone cancel text higlight */
+
 #selected-project-thumbnail a > img {
 	height: 100%;
 	width: 100%;

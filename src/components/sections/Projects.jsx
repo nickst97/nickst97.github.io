@@ -148,7 +148,7 @@ export default function Projects({ setWaveColor }) {
 					<a
 						href={
 							selectedProject.link
-						} /*TODO: add links, at the end of the project */
+						} /*TODO: when finished: add links */
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -156,7 +156,8 @@ export default function Projects({ setWaveColor }) {
 							src={require("../../images/project thumbnails/md/" +
 								selectedProject.title +
 								".png")}
-							alt={selectedProject.title + " thumbnail"} // TODO: make the alt the ids
+							alt={selectedProject.title + " thumbnail"}
+							id={selectedProject.title + " thumbnail"}
 							className="section-item-thumbnail"
 						/>
 					</a>
