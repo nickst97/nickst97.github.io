@@ -41,51 +41,52 @@ const projectItems = [
 ];
 
 export default function Projects({ setWaveColor }) {
+	const defaultThumbnailSize = { width: 400, height: 300 };
 	const [selectedProject, setSelectedProject] = useState(null);
 	const [showThumbnail, setShowThumbnail] = useState(false);
-	const [thumbnailHeight, setThumbnailHeight] = useState(null);
-	const [pointerType, setPointerType] = useState();
+	const [thumbnailHeight, setThumbnailHeight] = useState(
+		defaultThumbnailSize.height
+	);
+	const [thumbnailWidth, setThumbnailWidth] = useState(
+		defaultThumbnailSize.width
+	);
+
+	const [mobileScreen, setMobileScreen] = useState(false);
 
 	useEffect(() => {
-		const detectPointerType = () => {
-			document.addEventListener("pointerdown", (event) => {
-				setPointerType(event.pointerType);
-			});
+		const handleResize = () => {
+			removeProject();
+			setMobileScreen(window.innerWidth <= 830);
+			const computedStyles = getComputedStyle(document.documentElement);
+			const pagePadding =
+				parseInt(
+					computedStyles.getPropertyValue("--page-padding"),
+					10
+				) || 0;
+
+			const newThumbnailWidth =
+				window.innerWidth -
+				document.querySelector(".section-main-content").offsetWidth -
+				document.querySelector("nav").offsetWidth -
+				6 * pagePadding;
+			setThumbnailWidth(newThumbnailWidth);
+			setThumbnailHeight("auto");
 		};
 
-		const handleResize = () => {
-			if (window.innerWidth <= 850) {
-				const headerElement = document.querySelector("header");
-				const navElement = document.querySelector("nav");
-
-				if (headerElement && navElement) {
-					const computedStyles = getComputedStyle(
-						document.documentElement
-					);
-					const pagePadding =
-						parseInt(
-							computedStyles.getPropertyValue("--page-padding"),
-							10
-						) || 0;
-
-					const combinedHeight =
-						headerElement.clientHeight +
-						navElement.clientHeight +
-						pagePadding;
-					setThumbnailHeight(combinedHeight);
-				}
+		const handleClick = (event) => {
+			if (!event.target.className.startsWith("section-item-")) {
+				removeProject();
 			}
 		};
 
-		// Initial setup on mount
 		handleResize();
-		detectPointerType();
 
-		// Add event listener for window resize
 		window.addEventListener("resize", handleResize);
-		// Clean up the event listener on component unmount
+		document.addEventListener("click", handleClick);
+
 		return () => {
 			window.removeEventListener("resize", handleResize);
+			document.removeEventListener("click", handleClick);
 		};
 	}, []); // Empty dependency array to run effect only on mount and unmount
 
@@ -112,30 +113,17 @@ export default function Projects({ setWaveColor }) {
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
 						onClick={() => {
-							if (selectedProject) {
-								removeProject();
+							if (mobileScreen) {
 								setTimeout(() => {
-									chooseProject(projectItem);
-								}, 300);
-							} else {
-								chooseProject(projectItem);
+									window.open(projectItem.link, "_blank");
+								}, 1200);
 							}
 						}}
 						onMouseMove={() => {
-							if (
-								pointerType !== "touch" &&
-								pointerType !== "pen"
-							) {
-								chooseProject(projectItem);
-							}
+							chooseProject(projectItem);
 						}}
 						onMouseLeave={() => {
-							if (
-								pointerType !== "touch" &&
-								pointerType !== "pen"
-							) {
-								removeProject();
-							}
+							removeProject();
 						}}
 					>
 						<div className="section-item-title">
@@ -147,15 +135,15 @@ export default function Projects({ setWaveColor }) {
 					</div>
 				))}
 			</div>
-			{/* TODO Homeless Substance Use Programme
-Dashboard / Alma Economics IN SMALL SCREENS */}
 
-			{/* todo: add on click elsewhere */}
 			{selectedProject && (
 				<div
 					id="selected-project-thumbnail"
 					className={showThumbnail ? "visible" : "hidden"}
-					style={{ height: thumbnailHeight }}
+					style={{
+						height: thumbnailHeight,
+						width: thumbnailWidth,
+					}}
 				>
 					<a
 						href={
@@ -168,7 +156,8 @@ Dashboard / Alma Economics IN SMALL SCREENS */}
 							src={require("../../images/project thumbnails/md/" +
 								selectedProject.title +
 								".png")}
-							alt={selectedProject.title + " thumbnail"}
+							alt={selectedProject.title + " thumbnail"} // TODO: make the alt the ids
+							className="section-item-thumbnail"
 						/>
 					</a>
 				</div>
