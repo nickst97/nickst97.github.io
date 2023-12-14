@@ -9,16 +9,10 @@
 	max-width: 400px;
 }
 
-#selected-project-thumbnail a {
-	display: flex;
-	height: 100%;
-	width: auto;
-	border: 1px solid var(--black-color);
-}
-
-#selected-project-thumbnail a > img {
+#selected-project-thumbnail > img {
 	height: 100%;
 	width: 100%;
+	border: 1px solid var(--black-color);
 }
 
 @media only screen and (max-width: 830px) {

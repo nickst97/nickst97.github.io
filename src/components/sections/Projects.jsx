@@ -1,5 +1,5 @@
 import "../../css/Projects.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const projectItems = [
 	// {
@@ -51,12 +51,23 @@ export default function Projects({ setWaveColor }) {
 		defaultThumbnailSize.width
 	);
 
-	const [mobileScreen, setMobileScreen] = useState(false);
+	const chooseProject = (projectItem) => {
+		setShowThumbnail(true);
+		setSelectedProject(projectItem);
+		setWaveColor(projectItem.color);
+	};
+
+	const removeProject = useCallback(() => {
+		setShowThumbnail(false);
+		setWaveColor(null);
+		setTimeout(() => {
+			setSelectedProject(null);
+		}, 100);
+	}, [setShowThumbnail, setWaveColor, setSelectedProject]);
 
 	useEffect(() => {
 		const handleResize = () => {
 			removeProject();
-			setMobileScreen(window.innerWidth <= 830);
 			const computedStyles = getComputedStyle(document.documentElement);
 			const pagePadding =
 				parseInt(
@@ -88,21 +99,7 @@ export default function Projects({ setWaveColor }) {
 			window.removeEventListener("resize", handleResize);
 			document.removeEventListener("click", handleClick);
 		};
-	}, []); // Empty dependency array to run effect only on mount and unmount
-
-	const chooseProject = (projectItem) => {
-		setShowThumbnail(true);
-		setSelectedProject(projectItem);
-		setWaveColor(projectItem.color);
-	};
-
-	const removeProject = () => {
-		setShowThumbnail(false);
-		setWaveColor(null);
-		setTimeout(() => {
-			setSelectedProject(null);
-		}, 100);
-	};
+	}, [removeProject]);
 
 	return (
 		<section id="section-projects">
@@ -113,11 +110,9 @@ export default function Projects({ setWaveColor }) {
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
 						onClick={() => {
-							if (mobileScreen) {
-								setTimeout(() => {
-									window.open(projectItem.link, "_blank");
-								}, 1200);
-							}
+							setTimeout(() => {
+								window.open(projectItem.link, "_blank");
+							}, 1200);
 						}}
 						onMouseMove={() => {
 							chooseProject(projectItem);
@@ -145,22 +140,14 @@ export default function Projects({ setWaveColor }) {
 						width: thumbnailWidth,
 					}}
 				>
-					<a
-						href={
-							selectedProject.link
-						} /*TODO: when finished: add links */
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<img
-							src={require("../../images/project thumbnails/md/" +
-								selectedProject.title +
-								".png")}
-							alt={selectedProject.title + " thumbnail"}
-							id={selectedProject.title + " thumbnail"}
-							className="section-item-thumbnail"
-						/>
-					</a>
+					<img
+						src={require("../../images/project thumbnails/md/" +
+							selectedProject.title +
+							".png")}
+						alt={selectedProject.title + " thumbnail"}
+						id={selectedProject.title + " thumbnail"}
+						className="section-item-thumbnail"
+					/>
 				</div>
 			)}
 		</section>
