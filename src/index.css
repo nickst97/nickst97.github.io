@@ -1,6 +1,7 @@
 @font-face {
 	font-family: "Mabry";
-	src: url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
+	src: local("Mabry Pro"), local("Mabry Pro Regular"),
+		url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
 	font-weight: normal;
 }
 
@@ -20,13 +21,6 @@
 	font-family: "Mabry";
 	src: url("fonts/Mabry/MabryPro-Black.woff") format("woff");
 	font-weight: 900;
-}
-
-@font-face {
-	font-family: "Mabry Preloaded";
-	src: url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
-	font-weight: normal;
-	font-display: swap;
 }
 
 :root {
