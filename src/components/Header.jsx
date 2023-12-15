@@ -41,8 +41,6 @@ export default function Header() {
 
 		document.querySelector("link[rel~='apple-touch-icon']").href =
 			"/favicon/favicon-" + faviconTheme + "/apple-touch-icon.png";
-		document.querySelector("link[rel~='manifest']").href =
-			"/favicon/favicon-" + faviconTheme + "/site.webmanifest";
 	}, [darkMode]);
 
 	return (
