@@ -4,8 +4,8 @@
 	max-width: 355px;
 }
 
-/* @media (hover: none) {
+@media (hover: none) {
 	#section-home .section-item {
 		font-family: "Mabry Preloaded", sans-serif;
 	}
-} */
+}

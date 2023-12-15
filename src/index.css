@@ -1,7 +1,6 @@
 @font-face {
 	font-family: "Mabry";
-	src: url("https://nickst97.dev/MabryPro-Regular.woff"),
-		url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
+	src: url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
 	font-weight: normal;
 }
 
@@ -23,12 +22,12 @@
 	font-weight: 900;
 }
 
-/* @font-face {
+@font-face {
 	font-family: "Mabry Preloaded";
-	src: url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
+	src: url("https://nickst97.dev/MabryPro-Regular.woff") format("woff");
 	font-weight: normal;
 	font-display: swap;
-} */
+}
 
 :root {
 	--black-color: #121212;
