@@ -1,16 +1,6 @@
-import { useEffect } from "react";
 import "../../css/Home.css";
-import WebFont from "webfontloader";
 
 export default function Home() {
-	useEffect(() => {
-		WebFont.load({
-			custom: {
-				families: ["Mabry"],
-			},
-		});
-	}, []);
-
 	return (
 		<section id="section-home">
 			{/* TODO: Revisit how it looks regarding line breaks */}

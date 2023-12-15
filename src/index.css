@@ -22,6 +22,13 @@
 	font-weight: 900;
 }
 
+@font-face {
+	font-family: "Mabry Preloaded";
+	src: url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
+	font-weight: normal;
+	font-display: swap;
+}
+
 :root {
 	--black-color: #121212;
 	--white-color: #ededed;
@@ -48,7 +55,6 @@ body {
 }
 
 @media (hover: none) {
-	/* For devices that do not support hover (typically touch screens) */
 	body {
 		user-select: none;
 	}
