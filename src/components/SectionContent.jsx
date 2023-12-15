@@ -1,8 +1,8 @@
 import "../css/SectionContent.css";
-import Home from "./sections/Home";
-import Projects from "./sections/Projects";
 import AwardsCertifications from "./sections/AwardsCertifications";
 import Contact from "./sections/Contact";
+import Home from "./sections/Home";
+import Projects from "./sections/Projects";
 
 export default function SectionContent({ selectedSection, setWaveColor }) {
 	return (

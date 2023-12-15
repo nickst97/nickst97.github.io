@@ -44,7 +44,7 @@ header {
 }
 
 #light-mode-icon:first-child {
-	transition: color 0.5s ease-in-out; /* Adjust the transition duration and easing as needed */
+	transition: color 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 1150px) {

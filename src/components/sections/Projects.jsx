@@ -141,7 +141,7 @@ export default function Projects({ setWaveColor }) {
 					}}
 				>
 					<img
-						src={require("../../images/project thumbnails/md/" +
+						src={require("../../images/projects_thumbnails/md/" +
 							selectedProject.title +
 							".png")}
 						alt={selectedProject.title + " thumbnail"}

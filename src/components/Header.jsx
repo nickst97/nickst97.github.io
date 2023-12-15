@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
 import "../css/Header.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState, useEffect } from "react";
 
 export default function Header() {
 	const [darkMode, setDarkMode] = useState(false);

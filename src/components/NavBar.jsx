@@ -1,4 +1,5 @@
 import "../css/NavBar.css";
+
 export default function NavBar({
 	sectionNames,
 	selectedSection,
