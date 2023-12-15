@@ -36,7 +36,6 @@ export default function Contact({ setWaveColor }) {
 				.innerHTML.trim();
 		});
 
-		// TODO: when finished: remove this
 		if (checkFormValidity(formContent)) {
 			if (process.env.NODE_ENV !== "development") {
 				emailjs
@@ -56,10 +55,10 @@ export default function Contact({ setWaveColor }) {
 							setEmailResultMessage("Email failed to send");
 						}
 					);
+			} else {
+				setEmailSentStatus("success");
+				setEmailResultMessage("Email sent successfully");
 			}
-			// TODO: when finished: remove this
-			setEmailSentStatus("success");
-			setEmailResultMessage("Email sent successfully");
 		}
 	};
 

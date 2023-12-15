@@ -79,6 +79,7 @@ export default function Header() {
 					alt="My GitHub Profile"
 					target="_blank"
 					rel="noopener noreferrer"
+					aria-label="Visit my GitHub profile"
 				>
 					<FontAwesomeIcon icon={faGithub} />
 				</a>
@@ -88,6 +89,7 @@ export default function Header() {
 					alt="My LinkedIn Profile"
 					target="_blank"
 					rel="noopener noreferrer"
+					aria-label="Visit my LinkedIn profile"
 				>
 					<FontAwesomeIcon icon={faLinkedinIn} />
 				</a>
