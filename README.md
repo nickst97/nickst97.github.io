@@ -1,1 +1,1 @@
-![](https://github.com/Your_Repository_Name/Your_GIF_Name.gif)
+![](https://github.com/nickst97/nickst97.github.io/blob/main/public/lighthouse-results.gif)
