@@ -21,6 +21,5 @@
 	],
 	"theme_color": "#ededed",
 	"background_color": "#ededed",
-	"display": "standalone",
-	"start_url": "https://nickst97.dev/"
+	"display": "standalone"
 }
