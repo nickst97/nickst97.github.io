@@ -24,7 +24,7 @@
 
 @font-face {
 	font-family: "Mabry Preloaded";
-	src: url("https://nickst97.dev/MabryPro-Regular.woff") format("woff");
+	src: local("Mabry Pro") format("woff");
 	font-weight: normal;
 	font-display: swap;
 }
