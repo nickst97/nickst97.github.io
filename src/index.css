@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Mabry";
-	src: local("Mabry Pro"),
+	src: url("https://nickst97.dev/MabryPro-Regular.woff"),
 		url("fonts/Mabry/MabryPro-Regular.woff") format("woff");
 	font-weight: normal;
 }
