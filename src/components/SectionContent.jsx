@@ -7,7 +7,7 @@ import Contact from "./sections/Contact";
 export default function SectionContent({ selectedSection, setWaveColor }) {
 	return (
 		<>
-			{selectedSection === "Home" && <Home setWaveColor={setWaveColor} />}
+			{selectedSection === "Home" && <Home />}
 			{selectedSection === "Projects" && (
 				<Projects setWaveColor={setWaveColor} />
 			)}

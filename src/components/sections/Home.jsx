@@ -1,9 +1,19 @@
+import { useEffect } from "react";
 import "../../css/Home.css";
+import WebFont from "webfontloader";
 
-export default function Home({ setWaveColor }) {
+export default function Home() {
+	useEffect(() => {
+		WebFont.load({
+			custom: {
+				families: ["Mabry"],
+			},
+		});
+	}, []);
+
 	return (
 		<section id="section-home">
-			{/* Revisit how it looks regarding line breaks */}
+			{/* TODO: Revisit how it looks regarding line breaks */}
 			<div className="section-main-content">
 				<div className="section-item">
 					Full-stack developer with a strong proficiency in developing
