@@ -13,7 +13,9 @@ function App() {
 
 	useEffect(() => {
 		const handleResize = () => {
-			setSelectedSection(sectionNames[0]);
+			if (window.innerWidth <= 830 && window.innerHeight <= 600) {
+				setSelectedSection(sectionNames[0]);
+			}
 		};
 
 		handleResize();

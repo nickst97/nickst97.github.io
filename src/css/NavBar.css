@@ -45,13 +45,13 @@ nav {
 	}
 }
 
-@media only screen and (max-height: 800px) {
+@media only screen and (max-width: 830px) and (max-height: 800px) {
 	.nav-item {
 		font-size: 14px;
 	}
 }
 
-@media only screen and (max-height: 730px) {
+@media only screen and (max-width: 830px) and (max-height: 730px) {
 	.nav-item {
 		font-size: 2vh;
 	}
@@ -64,7 +64,7 @@ nav {
 	}
 }
 
-@media only screen and (max-height: 600px) {
+@media only screen and (max-width: 830px) and (max-height: 600px) {
 	nav {
 		display: none;
 	}

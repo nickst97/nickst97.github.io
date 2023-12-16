@@ -141,11 +141,24 @@ main {
 	}
 }
 
-@media only screen and (max-height: 450px) {
+@media only screen and (max-width: 830px) and (max-height: 500px) {
 	.ocean {
 		display: none;
 	}
+
+	#section-home .section-item {
+		font-size: 3vh;
+		line-height: normal;
+	}
 }
+
+@media only screen and (min-width: 830px) and (max-height: 680px) {
+	.ocean,
+	main {
+		display: none;
+	}
+}
+
 @media only screen and (max-height: 350px) {
 	main {
 		display: none;
