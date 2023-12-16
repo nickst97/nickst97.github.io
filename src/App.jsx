@@ -1,5 +1,5 @@
 import "./index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
@@ -10,6 +10,20 @@ const sectionNames = ["Home", "Projects", "Awards & Certifications", "Contact"];
 function App() {
 	const [selectedSection, setSelectedSection] = useState(sectionNames[0]);
 	const [waveColor, setWaveColor] = useState(null);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setSelectedSection(sectionNames[0]);
+		};
+
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	return (
 		<>

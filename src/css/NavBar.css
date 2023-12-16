@@ -63,3 +63,9 @@ nav {
 		gap: 6px 12px;
 	}
 }
+
+@media only screen and (max-height: 600px) {
+	nav {
+		display: none;
+	}
+}

@@ -134,3 +134,20 @@ main {
 		align-items: center;
 	}
 }
+
+@media only screen and (max-height: 730px) {
+	main {
+		gap: var(--page-padding);
+	}
+}
+
+@media only screen and (max-height: 450px) {
+	.ocean {
+		display: none;
+	}
+}
+@media only screen and (max-height: 350px) {
+	main {
+		display: none;
+	}
+}
