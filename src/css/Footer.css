@@ -10,7 +10,7 @@
 #footer-mask-left,
 #footer-mask-right {
 	height: 100%;
-	width: calc(var(--page-padding) - 1px);
+	width: calc(var(--page-padding) - 2px);
 	background-color: var(--secondary-color);
 }
 
@@ -25,7 +25,7 @@
 #footer-mask-center {
 	display: flex;
 	flex-direction: column;
-	width: calc(100% - 2 * var(--page-padding) + 36px);
+	width: calc(100% - 2 * var(--page-padding) + 4px);
 	height: 100%;
 	margin: 0 auto;
 }
