@@ -109,11 +109,7 @@ export default function Projects({ setWaveColor }) {
 						className="section-item"
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
-						onClick={() => {
-							setTimeout(() => {
-								window.open(projectItem.link, "_blank");
-							}, 1200);
-						}}
+						onClick={() => window.open(projectItem.link, "_blank")}
 						onMouseMove={() => {
 							chooseProject(projectItem);
 						}}
