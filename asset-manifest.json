@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a7f58eab.css",
-    "main.js": "/static/js/main.0a5a62e5.js",
+    "main.js": "/static/js/main.11d12560.js",
     "static/media/Homeless Substance Use Programme.png": "/static/media/Homeless Substance Use Programme.4ec9c09179ec0761f6fd.png",
     "static/media/Geolocating News.png": "/static/media/Geolocating News.64cf24d8019aeac777c4.png",
     "static/media/Card Tracker.png": "/static/media/Card Tracker.6dfdcf15418960158ae4.png",
@@ -14,10 +14,10 @@
     "index.html": "/index.html",
     "static/media/wave.svg": "/static/media/wave.38e831c20ac0bd04839c.svg",
     "main.a7f58eab.css.map": "/static/css/main.a7f58eab.css.map",
-    "main.0a5a62e5.js.map": "/static/js/main.0a5a62e5.js.map"
+    "main.11d12560.js.map": "/static/js/main.11d12560.js.map"
   },
   "entrypoints": [
     "static/css/main.a7f58eab.css",
-    "static/js/main.0a5a62e5.js"
+    "static/js/main.11d12560.js"
   ]
 }
