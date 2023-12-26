@@ -29,6 +29,7 @@ function App() {
 
 	return (
 		<>
+			<div className="border-mask" />
 			<Header />
 			<main>
 				<NavBar

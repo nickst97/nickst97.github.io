@@ -164,3 +164,15 @@ main {
 		display: none;
 	}
 }
+
+.border-mask {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+	width: calc(100vw - 2 * var(--page-padding));
+	height: calc(100vh - 2 * var(--page-padding));
+	outline: var(--page-padding) solid var(--secondary-color);
+	border: var(--page-border-width) solid var(--primary-color);
+	background-color: transparent;
+}
