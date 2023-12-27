@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c433f57b.css",
-    "main.js": "/static/js/main.ff1b4c83.js",
+    "main.css": "/static/css/main.03d14b3f.css",
+    "main.js": "/static/js/main.2d1bb18f.js",
     "static/media/Homeless Substance Use Programme.png": "/static/media/Homeless Substance Use Programme.4ec9c09179ec0761f6fd.png",
     "static/media/Geolocating News.png": "/static/media/Geolocating News.64cf24d8019aeac777c4.png",
     "static/media/Card Tracker.png": "/static/media/Card Tracker.6dfdcf15418960158ae4.png",
@@ -13,11 +13,11 @@
     "static/media/MabryPro-Medium.woff": "/static/media/MabryPro-Medium.e2bc855b5118b37e4844.woff",
     "index.html": "/index.html",
     "static/media/wave.svg": "/static/media/wave.38e831c20ac0bd04839c.svg",
-    "main.c433f57b.css.map": "/static/css/main.c433f57b.css.map",
-    "main.ff1b4c83.js.map": "/static/js/main.ff1b4c83.js.map"
+    "main.03d14b3f.css.map": "/static/css/main.03d14b3f.css.map",
+    "main.2d1bb18f.js.map": "/static/js/main.2d1bb18f.js.map"
   },
   "entrypoints": [
-    "static/css/main.c433f57b.css",
-    "static/js/main.ff1b4c83.js"
+    "static/css/main.03d14b3f.css",
+    "static/js/main.2d1bb18f.js"
   ]
 }
