@@ -42,8 +42,8 @@ body {
 	margin: 0;
 	font-family: "Mabry", sans-serif;
 	display: flex;
-	width: calc(100vw - 2 * var(--page-padding));
-	height: calc(100vh - 2 * var(--page-padding));
+	width: calc(100dvw - 2 * var(--page-padding));
+	height: calc(100dvh - 2 * var(--page-padding));
 	margin: calc(var(--page-padding) - var(--page-border-width)) auto 0;
 	overflow: hidden;
 	background-color: var(--secondary-color);
@@ -170,8 +170,8 @@ main {
 	top: 50%;
 	right: 50%;
 	transform: translate(50%, -50%);
-	width: calc(100vw - 2 * var(--page-padding));
-	height: calc(100vh - 2 * var(--page-padding));
+	width: calc(100dvw - 2 * var(--page-padding));
+	height: calc(100dvh - 2 * var(--page-padding));
 	outline: var(--page-padding) solid var(--secondary-color);
 	border: var(--page-border-width) solid var(--primary-color);
 	background-color: transparent;
