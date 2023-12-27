@@ -1,9 +1,9 @@
-import "./index.css";
+import "../css/index.css";
 import { useState, useEffect } from "react";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import NavBar from "./components/NavBar";
-import SectionContent from "./components/SectionContent";
+import Footer from "./Footer";
+import Header from "./Header";
+import NavBar from "./NavBar";
+import SectionContent from "./SectionContent";
 
 const sectionNames = ["Home", "Projects", "Awards & Certifications", "Contact"];
 
