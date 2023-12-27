@@ -7,6 +7,18 @@ import { useState, useEffect } from "react";
 export default function Header() {
 	const [darkMode, setDarkMode] = useState(false);
 	const [showMyNameInTitle, setShowMyNameInTitle] = useState(null);
+	const [enableTitleTransition, setEnableTitleTransition] = useState(false);
+
+	useEffect(() => {
+		const enableShowMyName = () => {
+			setEnableTitleTransition(true);
+		};
+
+		const waitSeconds = 5;
+		const timeoutId = setTimeout(enableShowMyName, waitSeconds * 1000);
+
+		return () => clearTimeout(timeoutId);
+	}, []);
 
 	useEffect(() => {
 		const primaryColor = darkMode ? "white" : "black";
@@ -50,7 +62,8 @@ export default function Header() {
 			<div
 				id="title-container"
 				onMouseOver={() => {
-					setShowMyNameInTitle(!showMyNameInTitle);
+					enableTitleTransition &&
+						setShowMyNameInTitle(!showMyNameInTitle);
 				}}
 			>
 				<div
