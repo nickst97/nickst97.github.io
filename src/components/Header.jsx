@@ -12,6 +12,7 @@ export default function Header() {
 	useEffect(() => {
 		const enableShowMyName = () => {
 			setEnableTitleTransition(true);
+			setShowMyNameInTitle(true);
 		};
 
 		const waitSeconds = 5;
