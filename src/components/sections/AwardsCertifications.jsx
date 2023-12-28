@@ -29,6 +29,10 @@ export default function AwardsCertifications({ setWaveColor }) {
 							"awards-cerification-container-" +
 							awardsCertificationsItem.title
 						}
+						key={
+							"awards-cerification-container-" +
+							awardsCertificationsItem.title
+						}
 						onMouseMove={() => {
 							setWaveColor(awardsCertificationsItem.color);
 						}}
