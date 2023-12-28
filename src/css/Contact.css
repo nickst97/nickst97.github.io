@@ -41,6 +41,12 @@
 @media only screen and (max-width: 830px) {
 	.contact-form-field {
 		min-height: 3.5vw;
+		width: 100%;
+		margin: 0 auto;
+		max-width: 400px;
+	}
+	.section-item {
+		width: 100%;
 	}
 	#contact-form-button-container {
 		flex-direction: column-reverse;
