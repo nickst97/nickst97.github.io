@@ -65,6 +65,10 @@ export default function Header() {
 					enableTitleTransition &&
 						setShowMyNameInTitle(!showMyNameInTitle);
 				}}
+				onClick={() => {
+					enableTitleTransition &&
+						setShowMyNameInTitle(!showMyNameInTitle);
+				}}
 			>
 				<div
 					id="domain-container"
