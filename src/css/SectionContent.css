@@ -48,11 +48,10 @@ section {
 		margin: auto;
 	}
 
-	.section-main-content {
+	.section-item > * {
+		margin-left: auto;
+		margin-right: auto;
 		text-align: center;
-		align-items: center;
-		height: auto;
-		width: 100%;
 	}
 }
 

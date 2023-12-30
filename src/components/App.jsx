@@ -30,7 +30,7 @@ function App() {
 	return (
 		<>
 			<div className="border-mask" />
-			<Header />
+			<Header setSelectedSection={setSelectedSection} />
 			<main>
 				<NavBar
 					sectionNames={sectionNames}

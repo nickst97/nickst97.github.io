@@ -40,12 +40,12 @@ export default function AwardsCertifications({ setWaveColor }) {
 							setWaveColor(null);
 						}}
 					>
-						<div className="section-item-title">
+						<h2 className="section-item-title">
 							{awardsCertificationsItem.title}
-						</div>
-						<div className="section-item-description">
+						</h2>
+						<h3 className="section-item-description">
 							{awardsCertificationsItem.description}
-						</div>
+						</h3>
 					</div>
 				))}
 			</div>

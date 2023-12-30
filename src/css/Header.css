@@ -15,11 +15,11 @@ header {
 	line-height: 63px;
 	margin-left: -7px;
 	margin-right: auto;
-	cursor: default;
 }
 
-#title-container > div {
+#title-container > h1 {
 	transition: calc(var(--transition-duration));
+	cursor: pointer;
 }
 
 #my-name-container {

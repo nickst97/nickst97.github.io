@@ -61,15 +61,34 @@ body {
 	border: var(--page-border-width) solid var(--primary-color);
 }
 
-a,
 button,
-input,
-textarea {
+a {
+	text-decoration: none;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	margin: inherit;
+	padding: inherit;
+	box-sizing: inherit;
+	background-color: inherit;
+	outline: none;
+	border: inherit;
+	font-weight: inherit;
+}
+
+h1,
+h2,
+h3 {
 	all: unset;
 }
 
 a {
 	cursor: pointer;
+}
+
+button:focus,
+a:focus {
+	outline: 1px solid var(--primary-color);
 }
 
 ::selection {

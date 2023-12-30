@@ -110,19 +110,31 @@ export default function Projects({ setWaveColor }) {
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
 						onClick={() => window.open(projectItem.link, "_blank")}
+						onKeyDown={(e) => {
+							if (e.key === "Enter") {
+								window.open(projectItem.link, "_blank");
+							}
+						}}
 						onMouseMove={() => {
+							chooseProject(projectItem);
+						}}
+						onFocus={() => {
 							chooseProject(projectItem);
 						}}
 						onMouseLeave={() => {
 							removeProject();
 						}}
+						onBlur={() => {
+							removeProject();
+						}}
+						tabIndex="0"
 					>
-						<div className="section-item-title">
+						<h2 className="section-item-title">
 							{projectItem.title}
-						</div>
-						<div className="section-item-description">
+						</h2>
+						<h3 className="section-item-description">
 							{projectItem.description}
-						</div>
+						</h3>
 					</div>
 				))}
 			</div>

@@ -30,3 +30,7 @@
 #selected-project-thumbnail {
 	height: 250px;
 }
+
+.section-item:focus {
+	text-decoration: underline;
+}

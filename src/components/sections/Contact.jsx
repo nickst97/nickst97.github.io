@@ -100,14 +100,18 @@ export default function Contact({ setWaveColor }) {
 
 	return (
 		<section id="section-contact">
-			<div className="section-main-content" id="contact-form">
+			<form
+				className="section-main-content"
+				id="contact-form"
+				target="_blank"
+			>
 				<div
 					className={`section-item ${
 						fieldWithError === "name" ? "style-error" : ""
 					}`}
 					id="contact-form-name"
 				>
-					<div className="section-item-title">Name</div>
+					<label className="section-item-title">Name</label>
 					<div
 						className="section-item-description contact-form-field"
 						id="contact-form-field-name"
@@ -121,7 +125,7 @@ export default function Contact({ setWaveColor }) {
 					}`}
 					id="contact-form-email"
 				>
-					<div className="section-item-title">Email</div>
+					<label className="section-item-title">Email</label>
 					<div
 						className="section-item-description contact-form-field"
 						id="contact-form-field-email"
@@ -135,7 +139,7 @@ export default function Contact({ setWaveColor }) {
 					}`}
 					id="contact-form-message"
 				>
-					<div className="section-item-title">Message</div>
+					<label className="section-item-title">Message</label>
 					<div
 						className="section-item-description contact-form-field"
 						id="contact-form-field-message"
@@ -160,7 +164,7 @@ export default function Contact({ setWaveColor }) {
 						<span>Send</span>
 					</button>
 				</div>
-			</div>
+			</form>
 		</section>
 	);
 }

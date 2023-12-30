@@ -4,7 +4,7 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react";
 
-export default function Header() {
+export default function Header({ setSelectedSection }) {
 	const [darkMode, setDarkMode] = useState(false);
 	const [showMyNameInTitle, setShowMyNameInTitle] = useState(null);
 	const [enableTitleTransition, setEnableTitleTransition] = useState(false);
@@ -67,30 +67,33 @@ export default function Header() {
 						setShowMyNameInTitle(!showMyNameInTitle);
 				}}
 				onClick={() => {
-					enableTitleTransition &&
-						setShowMyNameInTitle(!showMyNameInTitle);
+					{
+						enableTitleTransition &&
+							setShowMyNameInTitle(!showMyNameInTitle);
+						setSelectedSection("Home");
+					}
 				}}
 			>
-				<div
+				<h1
 					id="domain-container"
 					style={{ opacity: !showMyNameInTitle ? 1 : 0 }}
 				>
 					nickst97.dev
-				</div>
-				<div
+				</h1>
+				<h1
 					id="my-name-container"
 					style={{ opacity: showMyNameInTitle ? 1 : 0 }}
 				>
 					Nikolas Stavrakakis
-				</div>
+				</h1>
 			</div>
 			<div id="icons-container">
-				<div id="light-mode-icon">
-					<FontAwesomeIcon
-						icon={!darkMode ? faMoon : faSun}
-						onClick={() => setDarkMode(!darkMode)}
-					/>
-				</div>
+				<button
+					id="light-mode-icon"
+					onClick={() => setDarkMode(!darkMode)}
+				>
+					<FontAwesomeIcon icon={!darkMode ? faMoon : faSun} />
+				</button>
 				<a
 					id="github-icon-container"
 					href="https://github.com/nickst97"
