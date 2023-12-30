@@ -67,11 +67,9 @@ export default function Header({ setSelectedSection }) {
 						setShowMyNameInTitle(!showMyNameInTitle);
 				}}
 				onClick={() => {
-					{
-						enableTitleTransition &&
-							setShowMyNameInTitle(!showMyNameInTitle);
-						setSelectedSection("Home");
-					}
+					enableTitleTransition &&
+						setShowMyNameInTitle(!showMyNameInTitle);
+					setSelectedSection("Home");
 				}}
 			>
 				<h1
