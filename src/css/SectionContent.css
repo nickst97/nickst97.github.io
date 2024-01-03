@@ -48,6 +48,10 @@ section {
 		margin: auto;
 	}
 
+	.section-main-content {
+		text-align: center;
+	}
+
 	.section-item > * {
 		margin-left: auto;
 		margin-right: auto;
