@@ -43,10 +43,7 @@ export default function Contact({ setWaveColor }) {
 						process.env.REACT_APP_EMAILJS_SERVICE_ID,
 						process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
 						formContent,
-						{
-							privateKey:
-								process.env.REACT_APP_EMAILJS_PRIVATE_KEY,
-						}
+						process.env.REACT_APP_EMAILJS_PUBLIC_KEY
 					)
 					.then(
 						function () {
