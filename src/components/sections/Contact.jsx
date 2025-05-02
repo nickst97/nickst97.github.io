@@ -26,7 +26,8 @@ export default function Contact({ setWaveColor }) {
 		}
 	}, [emailSentStatus, emailResultMessage, setWaveColor]);
 
-	const sendEmail = () => {
+	const sendEmail = (e) => {
+		e.preventDefault();
 		const formContent = {};
 		emailSentStatus && removeWarning();
 		fieldNames.forEach((fieldName) => {
@@ -42,7 +43,10 @@ export default function Contact({ setWaveColor }) {
 						process.env.REACT_APP_EMAILJS_SERVICE_ID,
 						process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
 						formContent,
-						process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+						{
+							privateKey:
+								process.env.REACT_APP_EMAILJS_PRIVATE_KEY,
+						}
 					)
 					.then(
 						function () {
@@ -100,11 +104,7 @@ export default function Contact({ setWaveColor }) {
 
 	return (
 		<section id="section-contact">
-			<form
-				className="section-main-content"
-				id="contact-form"
-				target="_blank"
-			>
+			<form className="section-main-content" id="contact-form">
 				<div
 					className={`section-item ${
 						fieldWithError === "name" ? "style-error" : ""
@@ -160,7 +160,7 @@ export default function Contact({ setWaveColor }) {
 					>
 						{emailResultMessage}
 					</div>
-					<button className="nav-item" onClick={sendEmail}>
+					<button className="nav-item" onClick={(e) => sendEmail(e)}>
 						<span>Send</span>
 					</button>
 				</div>
