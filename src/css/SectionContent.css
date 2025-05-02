@@ -12,7 +12,7 @@ section {
 .section-item {
 	display: flex;
 	flex-direction: column;
-	cursor: default;
+	cursor: pointer;
 }
 
 .section-item-title {
@@ -21,6 +21,7 @@ section {
 	line-height: 1;
 	margin-bottom: 5px;
 	transition: all var(--transition-duration) ease;
+	white-space: nowrap;
 }
 
 .section-item-description {
@@ -100,5 +101,16 @@ section {
 
 	.section-item-description {
 		font-size: 2vh;
+	}
+}
+
+#section-awards-certifications .section-main-content a:last-of-type {
+	opacity: 0;
+	animation: fadeInCustom 20s ease 2s forwards;
+}
+
+@keyframes fadeInCustom {
+	to {
+		opacity: 0.4;
 	}
 }

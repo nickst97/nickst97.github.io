@@ -1,4 +1,4 @@
-import "../../css/Projects.css";
+import "../../css/Portfolio.css";
 import { useState, useEffect, useCallback } from "react";
 
 const projectItems = [
@@ -9,13 +9,25 @@ const projectItems = [
 	// 	color: "#395643",
 	// },
 	{
+		title: "viva.com",
+		description: "Website / Viva.com",
+		link: "https://www.viva.com/",
+		color: "#0e121a",
+	},
+	{
+		title: "Avimar Villas",
+		description: "Website / Personal Project",
+		link: "https://www.avimarvillas.com/",
+		color: "#323232",
+	},
+	{
 		title: "Evidence Map",
 		description: "Product / Alma Economics",
 		link: "https://evidencemap.com/",
 		color: "#3B4559",
 	},
 	{
-		title: "Homeless Substance Use Programme",
+		title: "Homeless Service Map",
 		description: "Dashboard / Alma Economics",
 		link: "https://homeless-service-map.herokuapp.com/",
 		color: "#651e7a",
@@ -32,15 +44,15 @@ const projectItems = [
 		link: "https://www.impactestimator.com/",
 		color: "#fcee21",
 	},
-	{
-		title: "Card Tracker",
-		description: "Add-in / Personal Project",
-		link: "https://chromewebstore.google.com/detail/card-tracker-for-dod-tich/iojpfoakmcbckgabflfieepdadcbiodb?hl=en",
-		color: "#286f2b",
-	},
+	// {
+	// 	title: "Card Tracker",
+	// 	description: "Add-in / Personal Project",
+	// 	link: "https://chromewebstore.google.com/detail/card-tracker-for-dod-tich/iojpfoakmcbckgabflfieepdadcbiodb?hl=en",
+	// 	color: "#286f2b",
+	// },
 ];
 
-export default function Projects({ setWaveColor }) {
+export default function Portfolio({ setWaveColor }) {
 	const defaultThumbnailSize = { width: 400, height: 300 };
 	const [selectedProject, setSelectedProject] = useState(null);
 	const [showThumbnail, setShowThumbnail] = useState(false);
@@ -105,16 +117,13 @@ export default function Projects({ setWaveColor }) {
 		<section id="section-projects">
 			<div className="section-main-content" id="projects-list">
 				{projectItems.map((projectItem) => (
-					<div
+					<a
 						className="section-item"
 						id={"project-container-" + projectItem.title}
 						key={"project-container-" + projectItem.title}
-						onClick={() => window.open(projectItem.link, "_blank")}
-						onKeyDown={(e) => {
-							if (e.key === "Enter") {
-								window.open(projectItem.link, "_blank");
-							}
-						}}
+						href={projectItem.link}
+						target="_blank"
+						rel="noopener noreferrer"
 						onMouseMove={() => {
 							chooseProject(projectItem);
 						}}
@@ -135,7 +144,7 @@ export default function Projects({ setWaveColor }) {
 						<h3 className="section-item-description">
 							{projectItem.description}
 						</h3>
-					</div>
+					</a>
 				))}
 			</div>
 
@@ -149,12 +158,13 @@ export default function Projects({ setWaveColor }) {
 					}}
 				>
 					<img
-						src={require("../../images/projects_thumbnails/md/" +
+						src={require("../../images/projects_thumbnails/" +
 							selectedProject.title +
-							".png")}
+							".webp")}
 						alt={selectedProject.title + " thumbnail"}
 						id={selectedProject.title + " thumbnail"}
 						className="section-item-thumbnail"
+						fetchPriority="high"
 					/>
 				</div>
 			)}
