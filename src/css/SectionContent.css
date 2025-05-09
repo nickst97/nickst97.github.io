@@ -104,9 +104,14 @@ section {
 	}
 }
 
+#section-awards-certifications .section-main-content a {
+	cursor: default;
+}
+
 #section-awards-certifications .section-main-content a:last-of-type {
 	opacity: 0;
 	animation: fadeInCustom 20s ease 2s forwards;
+	cursor: pointer;
 }
 
 @keyframes fadeInCustom {
