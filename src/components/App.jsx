@@ -5,7 +5,7 @@ import Header from "./Header";
 import NavBar from "./NavBar";
 import SectionContent from "./SectionContent";
 
-const sectionNames = ["Who I Am", "Portfolio", "Achievements", "Reach Out"];
+const sectionNames = ["About", "Work", "Achievements", "Contact"];
 
 function App() {
 	const [selectedSection, setSelectedSection] = useState(sectionNames[0]);

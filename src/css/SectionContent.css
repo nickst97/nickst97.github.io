@@ -21,7 +21,6 @@ section {
 	line-height: 1;
 	margin-bottom: 5px;
 	transition: all var(--transition-duration) ease;
-	white-space: nowrap;
 }
 
 .section-item-description {
@@ -50,6 +49,7 @@ section {
 	}
 
 	.section-main-content {
+		width: 100%;
 		text-align: center;
 	}
 

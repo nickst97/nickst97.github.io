@@ -20,7 +20,7 @@ const awardsCertificationsItems = [
 		link: null,
 	},
 	{
-		title: "Visionary Award for Queens Game 👑",
+		title: "Interstellar Award for Queens Game 👑",
 		description: "LinkedIn",
 		color: "#ffd4ab",
 		link: "https://www.linkedin.com/games/queens",

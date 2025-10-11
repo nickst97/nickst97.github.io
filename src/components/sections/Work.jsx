@@ -1,4 +1,4 @@
-import "../../css/Portfolio.css";
+import "../../css/Work.css";
 import { useState, useEffect, useCallback } from "react";
 
 const projectItems = [
@@ -52,7 +52,7 @@ const projectItems = [
 	// },
 ];
 
-export default function Portfolio({ setWaveColor }) {
+export default function Work({ setWaveColor }) {
 	const defaultThumbnailSize = { width: 400, height: 300 };
 	const [selectedProject, setSelectedProject] = useState(null);
 	const [showThumbnail, setShowThumbnail] = useState(false);
